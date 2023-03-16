@@ -79,8 +79,7 @@ main {
 
 .github {
   font-size: 13vmin;
-  --color-link-hover: #24292f;
-  color: #fff;
+  color: #24292f;
   display: block;
   align-self: auto;
   justify-self: center;
