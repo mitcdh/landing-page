@@ -15,8 +15,8 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.slim.min.js" defer></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" defer></script>
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="stylesheet" type="text/css" href="css/webfonts.css" />
-		<link rel="stylesheet" type="text/css" href="css/home.css" />
+		<link rel="preload" href="css/home.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<link rel="preload" href="css/webfonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	</head>
 	<body class="glitch-page">
 		<main>
@@ -52,6 +52,7 @@
 		</main>
 		<script src="js/background.js" defer></script>
 		<script src="js/greeting.js" defer></script>
-		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@700&family=Noto+Sans+JP:wght@700&family=Noto+Sans+KR:wght@700&family=Noto+Sans+TC:wght@700&family=Noto+Sans:wght@700&display=swap"></noscript>
+		<noscript><link rel="stylesheet" href="css/home.css"></noscript>
+		<noscript><link rel="stylesheet" href="css/webfonts.css"></noscript>
 	</body>
 </html>
