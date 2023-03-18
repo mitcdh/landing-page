@@ -168,7 +168,7 @@ a.instagram > svg > path {
   vertical-align: middle;
   font-size: 8vw;
   position: relative;
-  font-family: 'Noto Sans', 'Noto Sans TC', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Arabic', sans-serif;
+  font-family: sans-serif;
 }
 
 .greeting__cursor {

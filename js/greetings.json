@@ -1,0 +1,74 @@
+{
+    "greetings": [
+      {
+        "message": "G'day Mates",
+        "code": "en",
+        "font": "Noto Sans"
+      },
+      {
+        "message": "Ciao Amici",
+        "code": "it",
+        "font": "Noto Sans"
+      },
+      {
+        "message": "Salut les Amis",
+        "code": "fr",
+        "font": "Noto Sans"
+      },
+      {
+        "message": "¡Hola Amigos!",
+        "code": "es",
+        "font": "Noto Sans"
+      },
+      {
+        "message": "Привет друзья",
+        "code": "ru",
+        "font": "Noto Sans"
+      },
+      {
+        "message": "大家好",
+        "code": "zh",
+        "font": "Noto Sans TC"
+      },
+      {
+        "message": "مرحبا اصدقء",
+        "code": "ar",
+        "font": "Noto Sans Arabic"
+      },
+      {
+        "message": "Servus, Liebe Freunde",
+        "code": "de",
+        "font": "Noto Sans"
+      },
+      {
+        "message": "Alô Galera",
+        "code": "pt",
+        "font": "Noto Sans"
+      },
+      {
+        "message": "안녕하세요 친구",
+        "code": "ko",
+        "font": "Noto Sans KR"
+      },
+      {
+        "message": "皆さん、こんにちは",
+        "code": "ja",
+        "font": "Noto Sans JP"
+      },
+      {
+        "message": "Hej Mina Vänner",
+        "code": "sv",
+        "font": "Noto Sans"
+      },
+      {
+        "message": "Selam Dostlar",
+        "code": "tr",
+        "font": "Noto Sans"
+      },
+      {
+        "message": "Pozdravljeni Prijatelji",
+        "code": "sl",
+        "font": "Noto Sans"
+      }
+    ]
+  }  
