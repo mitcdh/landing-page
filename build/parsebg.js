@@ -29,7 +29,7 @@ function parseBackgrounds() {
 
     console.log(`parsebg.js :: Backgrounds parsed:${bgNames}`);
 
-    fs.writeFile('js/backgrounds.json', json, (err) => {
+    fs.writeFile('data/backgrounds.json', json, (err) => {
       if (err) {
         console.error('parsebg.js :: Error writing to js/backgrounds.json:', err);
         return;

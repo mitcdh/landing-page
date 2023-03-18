@@ -84,7 +84,7 @@ $(function () {
 
   async function getGreetings() {
     try {
-      const response = await fetch("js/greetings.json");
+      const response = await fetch("data/greetings.json");
       const data = await response.json();
       return data.greetings.map((greeting) => ({
         message: greeting.message,

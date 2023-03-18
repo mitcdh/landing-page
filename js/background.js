@@ -1,5 +1,5 @@
 $(function() {
-	fetch('js/backgrounds.json')
+	fetch('data/backgrounds.json')
 	  .then(response => response.json())
 	  .then(data => {
 		const backgrounds = data.backgrounds;

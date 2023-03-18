@@ -9,7 +9,7 @@ function uniqueChars(str) {
 }
 
 function fetchFonts() {
-  fs.readFile('js/greetings.json', (err, data) => {
+  fs.readFile('data/greetings.json', (err, data) => {
     if (err) throw err;
     const json = JSON.parse(data);
     const fontmap = {};

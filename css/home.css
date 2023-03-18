@@ -73,8 +73,8 @@ main {
   padding: 2vh;
   grid-template-columns: 15vmin 15vmin 15vmin 15vmin 15vmin;
   grid-template-rows: auto;
-  grid-template-areas: '... ... ... ... ... ...'
-  'blog github linkedin facebook twitter instagram';
+  grid-template-areas: '... ... ... ... ...'
+  'linkedin github instagram facebook twitter';
 }
 
 .github {
@@ -168,7 +168,7 @@ a.instagram > svg > path {
   vertical-align: middle;
   font-size: 8vw;
   position: relative;
-  font-family: sans-serif;
+  font-family: 'Noto Sans', 'Noto Sans TC', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Arabic', sans-serif;
 }
 
 .greeting__cursor {
