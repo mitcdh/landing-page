@@ -1,0 +1,52 @@
+{
+  "backgrounds": [
+    {
+      "src": "bg/balloon.center-bottom.webp",
+      "position": "center bottom"
+    },
+    {
+      "src": "bg/beach.center-bottom.webp",
+      "position": "center bottom"
+    },
+    {
+      "src": "bg/canyon.center-center.webp",
+      "position": "center center"
+    },
+    {
+      "src": "bg/cliff.center-center.webp",
+      "position": "center center"
+    },
+    {
+      "src": "bg/desert.center-center.webp",
+      "position": "center center"
+    },
+    {
+      "src": "bg/harbour.center-right.webp",
+      "position": "center right"
+    },
+    {
+      "src": "bg/mountain.center-right.webp",
+      "position": "center right"
+    },
+    {
+      "src": "bg/ocean.center-bottom.webp",
+      "position": "center bottom"
+    },
+    {
+      "src": "bg/river.center-left.webp",
+      "position": "center left"
+    },
+    {
+      "src": "bg/ruins.center-center.webp",
+      "position": "center center"
+    },
+    {
+      "src": "bg/sea.center-bottom.webp",
+      "position": "center bottom"
+    },
+    {
+      "src": "bg/valley.center-right.webp",
+      "position": "center right"
+    }
+  ]
+}
