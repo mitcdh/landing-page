@@ -23,7 +23,7 @@ fs.readFile('js/greetings.json', (err, data) => {
 
   const fontUrls = [];
   for (const font in fontmap) {
-    const url = `https://fonts.googleapis.com/css?family=${font}${fontWeight}&text=${querystring.escape(uniqueChars(fontmap[font]))}`;
+    const url = `https://fonts.googleapis.com/css?family=${font}${fontWeight}&text=${querystring.escape(uniqueChars(fontmap[font]))}&display=swap`;
     fontUrls.push(url);
   }
 

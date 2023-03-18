@@ -1,24 +1,11 @@
 /* This is a webfonts.css file created on 2023-03-18 as a fallback, it should be generated through build/fetchfonts.js on deploy */
 
 @font-face {
-  font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: url(https://fonts.gstatic.com/l/font?kit=o-0NIpQlx3QUlC5A4PNjXhFlY87-zE9OffPas-618h7zZHsc6UNRJZg0ozufowwrvcfbgOLvrregakds2BNlVF0tKda-yE3wUx0PZQl6Dmzjn3PvA0ZPV88E-KCKF8KpBc92JcgvOwXwrRatzwA1ZfZrJTXiJN2KxIpQW-AY8geLodEjZupVsYnsIDqj9Zk&skey=c04743c8f0416da6&v=v27) format('truetype');
-}
-
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 700;
-  src: url(https://fonts.gstatic.com/l/font?kit=Pby7FmXiEBPT4ITbgNA5CgmOalvI7qD6u4a3TsP12lVEfZek7gF87rXMJa8SZVx5jnz-OvE9X-rn7p9iYM7SuMTPw5quKYlS5gBSPekgpmpu4yx83skt3xb5ss_PkhUD3uDzKxB5HLTJqeb_91kFh8YR0HSJeVqV0BXfHqRrSis7YdhAhw7lZwrH1b7va2bqLeqSqXBKltIyZZKat-SdJUjRRNNN_epCbRt3V5NbvbeHVW9MEwK2ylXkB_g0O5N4i6fPvYOOzSijOKyijEjo3-3R9izjvstvMhRYBKBmKWskDaihKAxFv4sB3_5LejLi2L9iG2FlubIdp-aiTNr2UksSxUTC10U_9Wr6kR6pH7NzRAdLk0DPBqzQ7-4H62fvXR3BdW0OANKqbc7aiGC1jbNZDdA0VOWHncDuCvht4LEELM3MczzX3K5nEo9LCHH4jvM950VxNYEOqtjAImJFpDBMIxzPxE13nQ0Td5rQ8mfrNxXsGFo7v5zWmfJYBZll38k3GqQSQw&skey=d9e98c7b09391318&v=v27) format('opentype');
-}
-
-@font-face {
   font-family: 'Noto Sans Arabic';
   font-style: normal;
   font-weight: 700;
   font-stretch: normal;
+  font-display: swap;
   src: url(https://fonts.gstatic.com/l/font?kit=nwpxtLGrOAZMl5nJ_wfgRg3DrWFZWsnVBJ_sS6tlqHHFlhQ5l3sQWIHPqzCfL2uvu2iXxaIaLI7-rfoJzk7J7c5M7Lwp&skey=f979c51db865377e&v=v18) format('truetype');
 }
 
@@ -26,6 +13,7 @@
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: url(https://fonts.gstatic.com/l/font?kit=-nFkOG829Oofr2wohFbTp9i9gwQvDcVYMnRUCs1MOYTS&skey=113355c0388222ad&v=v26) format('opentype');
 }
 
@@ -33,6 +21,23 @@
   font-family: 'Noto Sans JP';
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: url(https://fonts.gstatic.com/l/font?kit=-F6pfjtqLzI2JPCgQBnw7HFQei0q1GV9ZGqU91jzLBpnNTWeW0E8gj_JpiXex8aW&skey=b1468649b9c42538&v=v42) format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=o-0NIpQlx3QUlC5A4PNjXhFlY87-zE9OffPas-618h7zZHsc6UNRJZg0ozufowwrvcfbgOLvrregakds2BNlVF0tKda-yE3wUx0PZQl6Dmzjn3PvA0ZPV88E-KCKF8KpBc92JcgvOwXwrRatzwA1ZfZrJTXiJN2KxIpQW-AY8geLodEjZupVsYnsIDqj9Zk&skey=c04743c8f0416da6&v=v27) format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=Pby7FmXiEBPT4ITbgNA5CgmOalvI7qD6u4a3TsP12lVEfZek7gF87rXMJa8SZVx5jnz-OvE9X-rn7p9iYM7SuMTPw5quKYlS5gBSPekgpmpu4yx83skt3xb5ss_PkhUD3uDzKxB5HLTJqeb_91kFh8YR0HSJeVqV0BXfHqRrSis7YdhAhw7lZwrH1b7va2bqLeqSqXBKltIyZZKat-SdJUjRRNNN_epCbRt3V5NbvbeHVW9MEwK2ylXkB_g0O5N4i6fPvYOOzSijOKyijEjo3-3R9izjvstvMhRYBKBmKWskDaihKAxFv4sB3_5LejLi2L9iG2FlubIdp-aiTNr2UksSxUTC10U_9Wr6kR6pH7NzRAdLk0DPBqzQ7-4H62fvXR3BdW0OANKqbc7aiGC1jbNZDdA0VOWHncDuCvht4LEELM3MczzX3K5nEo9LCHH4jvM950VxNYEOqtjAImJFpDBMIxzPxE13nQ0Td5rQ8mfrNxXsGFo7v5zWmfJYBZll38k3GqQSQw&skey=d9e98c7b09391318&v=v27) format('opentype');
 }
 
