@@ -27,8 +27,6 @@ fs.readFile('js/greetings.json', (err, data) => {
     fontUrls.push(url);
   }
 
-  console.log(fontUrls);
-
   let concatenatedFonts = '';
   let completedRequests = 0; // added counter variable
   fontUrls.forEach((url) => {
