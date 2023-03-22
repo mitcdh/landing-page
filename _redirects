@@ -1,4 +1,5 @@
 /cb2geochart https://mitcdh.github.io/cb2geochart
 /cb2md https://mitcdh.github.io/cb2md
+/feed/ https://blog.mitcdh.au/feed 301
 /feed https://blog.mitcdh.au/feed 301
 /blog/* https://blog.mitcdh.au/:splat 301
