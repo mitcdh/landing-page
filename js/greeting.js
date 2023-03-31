@@ -1,4 +1,4 @@
-$(function () {
+document.addEventListener("DOMContentLoaded", function() {
   // getBrowserLocales adapted from: https://phrase.com/blog/posts/detecting-a-users-locale/#Client-side_The_navigatorlanguages_Object
   // Typing adapted from: https://usefulangle.com/post/75/typing-effect-animation-javascript-css
 
