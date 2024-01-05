@@ -71,10 +71,10 @@ main {
   width: 100vw;
   height: 100vh;
   padding: 2vh;
-  grid-template-columns: 15vmin 15vmin 15vmin 15vmin 15vmin;
+  grid-template-columns: 15vmin 15vmin 15vmin 15vmin 15vmin 15vmin;
   grid-template-rows: auto;
-  grid-template-areas: '... ... ... ... ...'
-  'linkedin github instagram facebook twitter';
+  grid-template-areas: '... ... ... ... ... ...'
+  'linkedin github instagram facebook flickr youtube';
 }
 
 .github {
@@ -95,15 +95,6 @@ main {
   grid-area: twitter;
 }
 
-.blog {
-  font-size: 13vmin;
-  color: #ac54fc;
-  display: block;
-  align-self: auto;
-  justify-self: center;
-  grid-area: blog;
-}
-
 .facebook {
   font-size: 13vmin;
   color: #1877F2;
@@ -122,6 +113,43 @@ main {
   grid-area: linkedin;
 }
 
+.flickr {
+  font-size: 13vmin;
+  color: #ffffff;
+  display: block;
+  align-self: auto;
+  justify-self: center;
+  grid-area: flickr;
+
+}
+a.flickr > svg  {
+  background-image: linear-gradient(to left, #ff0084 50%, #0063dc 50%);
+  background-size: 80% 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+a.flickr:hover > svg {
+	background-image: none;
+}
+
+.youtube {
+  font-size: 13vmin;
+  color: #FF0000;
+  display: block;
+  align-self: auto;
+  justify-self: center;
+  grid-area: youtube;
+}
+a.youtube > svg  {
+  background-image: linear-gradient(#fff, #fff);
+  background-size: 50% 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+a.youtube:hover > svg {
+	background-image: none;
+}
+
 .instagram {
   font-size: 13vmin;
   display: block;
@@ -134,16 +162,6 @@ a.instagram:hover > svg > path {
 }
 a.instagram > svg > path {
 	fill: url(#instagram__gradient);
-}
-
-.medium {
-  font-size: 13vmin;
-  color: #fff;
-  --color-link-hover: #000;
-  display: block;
-  align-self: auto;
-  justify-self: center;
-  grid-area: medium;
 }
 
 /* Greeting styles */
