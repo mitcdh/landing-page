@@ -3,14 +3,7 @@
 	Typing based on: https://usefulangle.com/post/75/typing-effect-animation-javascript-css
  */
 
-main {
-  display: block;
-}
-
-[hidden] {
-  display: none;
-}
-
+/* General Styles */
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -32,153 +25,98 @@ a {
   outline: none;
 }
 
-a:hover,a:focus,a:active {
+a:hover, a:focus, a:active {
   color: var(--color-link-hover);
   outline: none;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
   border: 0;
 }
 
-*,*::after,*::before {
+/* Universal box-sizing */
+*, *::after, *::before {
   box-sizing: border-box;
 }
 
+/* Main content styling */
 main {
+  display: block;
   position: relative;
   width: 100%;
 }
 
 .content {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  min-height: 100vh;
+  height: calc(100vh - 15vmin); /* Assuming 15vmin is the height of the icons container */
 }
 
-/* Icons */
 .icons__container {
   position: fixed;
   bottom: 0;
+  display: grid;
+  width: 100vw;
+  padding: 2vh;
+  grid-template-columns: repeat(6, 15vmin); /* Creates a grid with 6 equal columns */
+  justify-content: center;
+}
+
+/* Shared icon styles */
+.icons__container a {
+  font-size: 13vmin;
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: grid;
-  align-content: space-between;
-  width: 100vw;
-  height: 100vh;
-  padding: 2vh;
-  grid-template-columns: 15vmin 15vmin 15vmin 15vmin 15vmin 15vmin;
-  grid-template-rows: auto;
-  grid-template-areas: '... ... ... ... ... ...'
-  'linkedin github instagram facebook flickr youtube';
 }
 
-.github {
-  font-size: 13vmin;
-  color: #24292f;
-  display: block;
-  align-self: auto;
-  justify-self: center;
-  grid-area: github;
+/* Specific icon colors */
+.github { color: #24292f; }
+.twitter { color: #1DA1F2; }
+.facebook { color: #1877F2; }
+.linkedin { color: #0077B5; }
+.flickr { color: #ffffff; }
+.youtube { color: #FF0000; }
+
+/* Flickr and YouTube specific backgrounds */
+a.flickr > svg, a.youtube > svg {
+  background-size: 70% 50%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.twitter {
-  font-size: 13vmin;
-  color: #1DA1F2;
-  display: block;
-  align-self: auto;
-  justify-self: center;
-  grid-area: twitter;
-}
-
-.facebook {
-  font-size: 13vmin;
-  color: #1877F2;
-  display: block;
-  align-self: auto;
-  justify-self: center;
-  grid-area: facebook;
-}
-
-.linkedin {
-  font-size: 13vmin;
-  color: #0077B5;
-  display: block;
-  align-self: auto;
-  justify-self: center;
-  grid-area: linkedin;
-}
-
-.flickr {
-  font-size: 13vmin;
-  color: #ffffff;
-  display: block;
-  align-self: auto;
-  justify-self: center;
-  grid-area: flickr;
-
-}
-a.flickr > svg  {
+a.flickr > svg {
   background-image: linear-gradient(to left, #ff0084 50%, #0063dc 50%);
-  background-size: 80% 80%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-a.flickr:hover > svg {
-	background-image: none;
 }
 
-.youtube {
-  font-size: 13vmin;
-  color: #FF0000;
-  display: block;
-  align-self: auto;
-  justify-self: center;
-  grid-area: youtube;
+a.flickr:hover > svg, a.youtube:hover > svg {
+  background-image: none;
 }
-a.youtube > svg  {
+
+a.youtube > svg {
   background-image: linear-gradient(#fff, #fff);
-  background-size: 50% 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-a.youtube:hover > svg {
-	background-image: none;
 }
 
-.instagram {
-  font-size: 13vmin;
-  display: block;
-  align-self: auto;
-  justify-self: center;
-  grid-area: instagram;
-}
-a.instagram:hover > svg > path {
-	fill: var(--color-link-hover);
-}
+/* Instagram icon gradient and hover effect */
 a.instagram > svg > path {
-	fill: url(#instagram__gradient);
+  fill: url(#instagram__gradient);
+}
+
+a.instagram:hover > svg > path {
+  fill: var(--color-link-hover);
 }
 
 /* Greeting styles */
 .greeting__container {
-  animation-name: glitch-anim-text;
-  animation-duration: var(--time-anim);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
   display: block;
   position: absolute;
-  left: 0px;
-  right: 0px;
-}
-
-.greeting__container {
-	text-align: center;
-	animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.2);
+  left: 0;
+  right: 0;
+  text-align: center;
+  animation: glitch-anim-text var(--time-anim) linear infinite;
+  animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.2);
 }
 
 .greeting__text {
@@ -186,21 +124,21 @@ a.instagram > svg > path {
   vertical-align: middle;
   font-size: 8vw;
   position: relative;
-  font-family: 'Noto Sans', 'Noto Sans TC', 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Arabic', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .greeting__cursor {
-	display: inline-block;
-	vertical-align: middle;
-	width: .7vw;
-	height: 11vh;
-	background-color: #3090C7;
-	animation: cursor__blink .5s step-end infinite;
+  display: inline-block;
+  vertical-align: middle;
+  width: .7vw;
+  height: 11vh;
+  background-color: #3090C7;
+  animation: cursor__blink .5s step-end infinite;
 }
 
 /* Glitch styles */
-
 .glitch-page {
+  /* Define variables for easy maintenance and adjustments */
   --color-text: #f5f5f5;
   --color-bg: #000;
   --color-link: #fff;
@@ -245,51 +183,32 @@ a.instagram > svg > path {
   background-blend-mode: var(--blend-mode-1);
 }
 
+/* Glitch image animations */
 .glitch__img:nth-child(n+2) {
   opacity: 0;
-}
-
-.glitch__img:nth-child(n+2) {
   animation-duration: var(--time-anim);
   animation-delay: var(--delay-anim);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
-.glitch__img:nth-child(2) {
-  background-color: var(--blend-color-2);
-  background-blend-mode: var(--blend-mode-2);
-  animation-name: glitch-anim-1;
+/* Glitch animation specific styles */
+.glitch__img:nth-child(2) { background-color: var(--blend-color-2); background-blend-mode: var(--blend-mode-2); animation-name: glitch-anim-1; }
+.glitch__img:nth-child(3) { background-color: var(--blend-color-3); background-blend-mode: var(--blend-mode-3); animation-name: glitch-anim-2; }
+.glitch__img:nth-child(4) { background-color: var(--blend-color-4); background-blend-mode: var(--blend-mode-4); animation-name: glitch-anim-3; }
+.glitch__img:nth-child(5) { background-color: var(--blend-color-5); background-blend-mode: var(--blend-mode-5); animation-name: glitch-anim-flash; }
+
+/* Cursor Blinking Animation */
+@keyframes cursor__blink {
+  from, to { background-color: transparent; }
+  50% { background-color: #3090C7; }
 }
 
-.glitch__img:nth-child(3) {
-  background-color: var(--blend-color-3);
-  background-blend-mode: var(--blend-mode-3);
-  animation-name: glitch-anim-2;
-}
+/* Hidden Attribute Styling */
+[hidden] { display: none; }
 
-.glitch__img:nth-child(4) {
-  background-color: var(--blend-color-4);
-  background-blend-mode: var(--blend-mode-4);
-  animation-name: glitch-anim-3;
-}
-
-.glitch__img:nth-child(5) {
-  background-color: var(--blend-color-5);
-  background-blend-mode: var(--blend-mode-5);
-  animation-name: glitch-anim-flash;
-}
 
 /* Animations */
-
-@keyframes cursor__blink {
-	from, to { 
-		background-color: transparent 
-	}
-	50% { 
-		background-color: #3090C7; 
-	}
-}
 
 @keyframes glitch-anim-1 {
   0% {
