@@ -12,11 +12,11 @@ html {
 
 body {
   margin: 0;
-  min-height: 100vh;
   color: var(--color-text);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 a {
@@ -44,23 +44,26 @@ img {
 main {
   display: block;
   position: relative;
-  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
 }
 
 .content {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 15vmin); /* Assuming 15vmin is the height of the icons container */
+  margin: 0 auto;
+  height: 100vh; /* Assuming 15vmin is the height of the icons container */
 }
 
 .icons__container {
   position: fixed;
   bottom: 0;
   display: grid;
-  width: 100vw;
+  width: 100%;
   padding: 2vh;
-  grid-template-columns: repeat(6, 15vmin); /* Creates a grid with 6 equal columns */
+  grid-template-columns: repeat(auto-fit, minmax(10vmin, 15vmin)); /* Responsive grid columns */
   justify-content: center;
 }
 
@@ -143,8 +146,8 @@ a.instagram:hover > svg > path {
   --color-bg: #000;
   --color-link: #fff;
   --color-link-hover: #fff;
-  --glitch-width: 100vw;
-  --glitch-height: 100vh;
+  --glitch-width: 100%;
+  --glitch-height: 100%;
   --gap-horizontal: 10px;
   --gap-vertical: 5px;
   --time-anim: 4s;
@@ -159,6 +162,9 @@ a.instagram:hover > svg > path {
   --blend-color-3: transparent;
   --blend-color-4: transparent;
   --blend-color-5: #9932cc;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .glitch__container {
