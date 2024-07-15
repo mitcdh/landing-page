@@ -47,6 +47,10 @@
     {
       "src": "bg/valley.center-right.webp",
       "position": "center right"
+    },
+    {
+      "src": "bg/styria.center-center.webp",
+      "position": "center center"
     }
   ]
 }
