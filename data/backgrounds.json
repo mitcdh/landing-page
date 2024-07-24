@@ -9,6 +9,18 @@
       "position": "center bottom"
     },
     {
+      "src": "bg/boat.center-left.webp",
+      "position": "center left"
+    },
+    {
+      "src": "bg/caldera.center-center.webp",
+      "position": "center center"
+    },
+    {
+      "src": "bg/calm.center-right.webp",
+      "position": "center right"
+    },
+    {
       "src": "bg/canyon.center-center.webp",
       "position": "center center"
     },
@@ -17,7 +29,19 @@
       "position": "center center"
     },
     {
+      "src": "bg/climbing.center-right.webp",
+      "position": "center right"
+    },
+    {
+      "src": "bg/dad.center-left.webp",
+      "position": "center left"
+    },
+    {
       "src": "bg/desert.center-center.webp",
+      "position": "center center"
+    },
+    {
+      "src": "bg/forum.center-center.webp",
       "position": "center center"
     },
     {
@@ -25,16 +49,44 @@
       "position": "center right"
     },
     {
+      "src": "bg/kos.center-center.webp",
+      "position": "center center"
+    },
+    {
       "src": "bg/mountain.center-right.webp",
       "position": "center right"
+    },
+    {
+      "src": "bg/oasis.center-left.webp",
+      "position": "center left"
     },
     {
       "src": "bg/ocean.center-bottom.webp",
       "position": "center bottom"
     },
     {
+      "src": "bg/pantheon.center-top.webp",
+      "position": "center top"
+    },
+    {
+      "src": "bg/parthenon.center-right.webp",
+      "position": "center right"
+    },
+    {
+      "src": "bg/playa.center-center.webp",
+      "position": "center center"
+    },
+    {
       "src": "bg/river.center-left.webp",
       "position": "center left"
+    },
+    {
+      "src": "bg/rocks.center-right.webp",
+      "position": "center right"
+    },
+    {
+      "src": "bg/rome.center-right.webp",
+      "position": "center right"
     },
     {
       "src": "bg/ruins.center-center.webp",
@@ -45,12 +97,20 @@
       "position": "center bottom"
     },
     {
-      "src": "bg/valley.center-right.webp",
-      "position": "center right"
+      "src": "bg/sp.center-bottom.webp",
+      "position": "center bottom"
     },
     {
       "src": "bg/styria.center-center.webp",
       "position": "center center"
+    },
+    {
+      "src": "bg/tiber.top-right.webp",
+      "position": "top right"
+    },
+    {
+      "src": "bg/valley.center-right.webp",
+      "position": "center right"
     }
   ]
 }
