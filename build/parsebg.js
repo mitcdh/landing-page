@@ -17,7 +17,12 @@ function parseBackgrounds() {
       if (match) {
         const name = match[1];
         const extension = match[3];
-        const position = match[2].replace(/-/g, ' ');
+        let position = match[2].replace(/-/g, ' ');
+        
+        // Swap characters for positions written with 'p' replacing '%' for legal file names
+        const positionRegex = /(\d+)p(?=\s|$)/g;
+        position = position.replace(positionRegex, '$1%');
+        
         const src = `bg/${file}`;
         backgrounds.push({src, position});
         bgNames += ' ' + name;
