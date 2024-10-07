@@ -1,42 +1,46 @@
-@font-face {
-  font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-stretch: normal;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/l/font?kit=o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyAaBN9d-yvT6iIaivTmu8vGOncAjOGPctvKnfDomA4JE_go6dMOcglDDlTjgnTDBGVIYMg3_6uNFsSDA-lwLscSMwXkuwKD2ykhdOJpMBH2Ocm90L5NVf0f8wmIjNIyZe5kvv-1SyuTzd-BNmwXIKD0b0ah30_f95fpCDhy0CrM91bk&skey=2b960fe17823056f&v=v36) format('truetype');
-}
+/* This is a webfonts.css file created on 2023-03-18 as a fallback, it should be generated through build/fetchfonts.js on deploy */
 
 @font-face {
+  font-display: swap;
   font-family: 'Noto Sans Arabic';
   font-style: normal;
   font-weight: 700;
-  font-stretch: normal;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/l/font?kit=nwpxtLGrOAZMl5nJ_wfgRg3DrWFZWsnVBJ_sS6tlqHHFlhQ5l3sQWIHPqzCfL2uvu2iXxaIaLI7-rfoJzk7J7c5M7Lwp&skey=f979c51db865377e&v=v18) format('truetype');
+  src: url('fonts/noto-sans-arabic-v18-arabic-700.woff2') format('woff2'), 
+       url('fonts/noto-sans-arabic-v18-arabic-700.woff') format('woff'); 
 }
 
 @font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/l/font?kit=PbyxFmXiEBPT4ITbgNA5Cgms3VYcOA-vvnIzzg01eLTyGnTB4WAZ5NapM8d2QDYdrBOaGYJZd6qDxdgGUIi1loio-t7_LNYD5EEDLr94mgA2w0Ikz7Z1xXChrLWXnV5c_KKsDVYmC-OWsJyg8idZs4lD1TLbeADG43-3Pv8DbnRTdbYvoX2KTX2o7viBbymELan8uCImu7leTP32j5r-JguyS5Qu47wibXQXU_A7qMLucgslKGLewCSMPbhcBc8Rhcqmrdfn0XjKFM3JtTCM2pm14mmHoZsLJng8Id0BPR9DJdjGEU08sPt43LIyaG-Z3dcZGgUeicdmnJrZa6KCRAJkxgS02BlJxAeMu2bfMccEW0I6vRy-JPSi_Ydb3j-zbEmdVghQBJb0ZY6FsTHqr-sGK4RrQoDelry3BYA33vheDZmWXmyNw88yPPceIgWtlbdExjAIEPB3vpi6Exc_mUE2D1y60wQCjkhmdc6nwgqcA3ybPSJNodmgi7MuBskWzKBEDcFhRXSCLnpjVCA2gds&skey=87e7ee645936e2c7&v=v36) format('truetype');
-}
-
-@font-face {
-  font-family: 'Noto Sans JP';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/l/font?kit=-F6jfjtqLzI2JPCgQBnw7HFyzSD-AsregP8VFPYk75vAzle_OSMW8l3n0ETMgb-R94_PUpiiVCb2iQ&skey=72472b0eb8793570&v=v53) format('truetype');
-}
-
-@font-face {
+  font-display: swap; 
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/l/font?kit=-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz70e1_CpWu4sSBzBuFdmyVA&skey=3904269dc8bdd0a1&v=v36) format('truetype');
+  src: url('fonts/noto-sans-tc-v26-latin-700.woff2') format('woff2'),
+       url('fonts/noto-sans-tc-v26-latin-700.woff') format('woff');
 }
 
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/noto-sans-jp-v42-latin-700.woff2') format('woff2'), 
+       url('fonts/noto-sans-jp-v42-latin-700.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/noto-sans-v27-latin-700.woff2') format('woff2'),
+       url('fonts/noto-sans-v27-latin-700.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/noto-sans-kr-v27-latin-700.woff2') format('woff2'),
+       url('fonts/noto-sans-kr-v27-latin-700.woff') format('woff');
+}
