@@ -1,6 +1,10 @@
 {
   "backgrounds": [
     {
+      "src": "bg/almsee.40p-40p.webp",
+      "position": "40% 40%"
+    },
+    {
       "src": "bg/balloon.center-bottom.webp",
       "position": "center bottom"
     },
@@ -9,36 +13,36 @@
       "position": "center bottom"
     },
     {
-      "src": "bg/boat.center-left.webp",
-      "position": "center left"
+      "src": "bg/boat.25p-50p.webp",
+      "position": "25% 50%"
     },
     {
-      "src": "bg/caldera.center-center.webp",
-      "position": "center center"
+      "src": "bg/caldera.30p-50p.webp",
+      "position": "30% 50%"
     },
     {
-      "src": "bg/calm.center-right.webp",
-      "position": "center right"
+      "src": "bg/calm.70p-50p.webp",
+      "position": "70% 50%"
     },
     {
       "src": "bg/canyon.center-center.webp",
       "position": "center center"
     },
     {
-      "src": "bg/cliff.center-center.webp",
-      "position": "center center"
+      "src": "bg/cliff.35p-50p.webp",
+      "position": "35% 50%"
     },
     {
-      "src": "bg/climbing.center-right.webp",
-      "position": "center right"
+      "src": "bg/climbing.80p-50p.webp",
+      "position": "80% 50%"
     },
     {
-      "src": "bg/dad.center-left.webp",
-      "position": "center left"
+      "src": "bg/dad.15p-50p.webp",
+      "position": "15% 50%"
     },
     {
-      "src": "bg/desert.center-center.webp",
-      "position": "center center"
+      "src": "bg/desert.80p-50p.webp",
+      "position": "80% 50%"
     },
     {
       "src": "bg/forum.center-center.webp",
@@ -49,68 +53,80 @@
       "position": "center right"
     },
     {
+      "src": "bg/klamm.45p-55p.webp",
+      "position": "45% 55%"
+    },
+    {
       "src": "bg/kos.center-center.webp",
       "position": "center center"
     },
     {
-      "src": "bg/mountain.center-right.webp",
-      "position": "center right"
+      "src": "bg/laxenburg.center-center.webp",
+      "position": "center center"
     },
     {
-      "src": "bg/oasis.center-left.webp",
-      "position": "center left"
+      "src": "bg/mountain.85p-50p.webp",
+      "position": "85% 50%"
     },
     {
-      "src": "bg/ocean.center-bottom.webp",
-      "position": "center bottom"
+      "src": "bg/mullet.57p-50p.webp",
+      "position": "57% 50%"
+    },
+    {
+      "src": "bg/oasis.35p-50p.webp",
+      "position": "35% 50%"
+    },
+    {
+      "src": "bg/ocean.10p-100p.webp",
+      "position": "10% 100%"
     },
     {
       "src": "bg/pantheon.center-top.webp",
       "position": "center top"
     },
     {
-      "src": "bg/parthenon.center-right.webp",
-      "position": "center right"
+      "src": "bg/parthenon.80p-50p.webp",
+      "position": "80% 50%"
     },
     {
-      "src": "bg/playa.center-center.webp",
-      "position": "center center"
+      "src": "bg/playa.70p-50p.webp",
+      "position": "70% 50%"
     },
     {
-      "src": "bg/river.center-left.webp",
-      "position": "center left"
+      "src": "bg/river.25p-50p.webp",
+      "position": "25% 50%"
     },
     {
-      "src": "bg/rocks.center-right.webp",
-      "position": "center right"
+      "src": "bg/rocks.65p-50p.webp",
+      "position": "65% 50%"
     },
     {
-      "src": "bg/rome.center-right.webp",
-      "position": "center right"
+      "src": "bg/rome.75p-50p.webp",
+      "position": "75% 50%"
     },
     {
-      "src": "bg/ruins.center-center.webp",
-      "position": "center center"
+      "src": "bg/ruins.80p-50p.webp",
+      "position": "80% 50%"
     },
     {
       "src": "bg/sea.center-bottom.webp",
       "position": "center bottom"
     },
     {
-      "src": "bg/sp.center-bottom.webp",
-      "position": "center bottom"
+      "src": "bg/sp.35p-100p.webp",
+      "position": "35% 100%"
     },
     {
       "src": "bg/styria.center-center.webp",
       "position": "center center"
     },
     {
-      "src": "bg/tiber.top-right.webp",
-      "position": "top right"
+      "src": "bg/tiber.70p-0p.webp",
+      "position": "70% 0%"
     },
     {
-      "src": "bg/valley.center-right.webp",
-      "position": "center right"
+      "src": "bg/valley.85p-50p.webp",
+      "position": "85% 50%"
     }
   ]
 }
