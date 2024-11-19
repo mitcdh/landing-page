@@ -24,7 +24,7 @@ function parseBackgrounds() {
         position = position.replace(positionRegex, '$1%');
         
         const src = `bg/${file}`;
-        backgrounds.push({src, position});
+        backgrounds.push({name, src, position});
         bgNames += ' ' + name;
       }
     });

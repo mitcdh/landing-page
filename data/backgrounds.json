@@ -1,132 +1,219 @@
 {
   "backgrounds": [
     {
+      "name": "almsee",
       "src": "bg/almsee.40p-40p.webp",
       "position": "40% 40%"
     },
     {
+      "name": "balloon",
       "src": "bg/balloon.center-bottom.webp",
       "position": "center bottom"
     },
     {
+      "name": "base",
+      "src": "bg/base.38p-100p.webp",
+      "position": "38% 100%"
+    },
+    {
+      "name": "beach",
       "src": "bg/beach.center-bottom.webp",
       "position": "center bottom"
     },
     {
+      "name": "boat",
       "src": "bg/boat.25p-50p.webp",
       "position": "25% 50%"
     },
     {
+      "name": "bondi",
+      "src": "bg/bondi.55p-60p.webp",
+      "position": "55% 60%"
+    },
+    {
+      "name": "caldera",
       "src": "bg/caldera.30p-50p.webp",
       "position": "30% 50%"
     },
     {
+      "name": "calm",
       "src": "bg/calm.70p-50p.webp",
       "position": "70% 50%"
     },
     {
+      "name": "canyon",
       "src": "bg/canyon.center-center.webp",
       "position": "center center"
     },
     {
+      "name": "cliff",
       "src": "bg/cliff.35p-50p.webp",
       "position": "35% 50%"
     },
     {
+      "name": "climbing",
       "src": "bg/climbing.80p-50p.webp",
       "position": "80% 50%"
     },
     {
+      "name": "dad",
       "src": "bg/dad.15p-50p.webp",
       "position": "15% 50%"
     },
     {
+      "name": "desert",
       "src": "bg/desert.80p-50p.webp",
       "position": "80% 50%"
     },
     {
+      "name": "elliot",
+      "src": "bg/elliot.40p-70p.webp",
+      "position": "40% 70%"
+    },
+    {
+      "name": "forum",
       "src": "bg/forum.center-center.webp",
       "position": "center center"
     },
     {
+      "name": "gulls",
+      "src": "bg/gulls.35p-55p.webp",
+      "position": "35% 55%"
+    },
+    {
+      "name": "harbour",
       "src": "bg/harbour.center-right.webp",
       "position": "center right"
     },
     {
+      "name": "kata",
+      "src": "bg/kata.48p-55p.webp",
+      "position": "48% 55%"
+    },
+    {
+      "name": "kings",
+      "src": "bg/kings.30p-55p.webp",
+      "position": "30% 55%"
+    },
+    {
+      "name": "klamm",
       "src": "bg/klamm.45p-55p.webp",
       "position": "45% 55%"
     },
     {
+      "name": "kos",
       "src": "bg/kos.center-center.webp",
       "position": "center center"
     },
     {
+      "name": "laxenburg",
       "src": "bg/laxenburg.center-center.webp",
       "position": "center center"
     },
     {
+      "name": "mountain",
       "src": "bg/mountain.85p-50p.webp",
       "position": "85% 50%"
     },
     {
+      "name": "mullet",
       "src": "bg/mullet.57p-50p.webp",
       "position": "57% 50%"
     },
     {
+      "name": "oasis",
       "src": "bg/oasis.35p-50p.webp",
       "position": "35% 50%"
     },
     {
+      "name": "ocean",
       "src": "bg/ocean.10p-100p.webp",
       "position": "10% 100%"
     },
     {
+      "name": "pantheon",
       "src": "bg/pantheon.center-top.webp",
       "position": "center top"
     },
     {
+      "name": "parthenon",
       "src": "bg/parthenon.80p-50p.webp",
       "position": "80% 50%"
     },
     {
+      "name": "playa",
       "src": "bg/playa.70p-50p.webp",
       "position": "70% 50%"
     },
     {
+      "name": "priscilla",
+      "src": "bg/priscilla.60p-55p.webp",
+      "position": "60% 55%"
+    },
+    {
+      "name": "range",
+      "src": "bg/range.35p-60p.webp",
+      "position": "35% 60%"
+    },
+    {
+      "name": "river",
       "src": "bg/river.25p-50p.webp",
       "position": "25% 50%"
     },
     {
+      "name": "rock",
+      "src": "bg/rock.60p-50p.webp",
+      "position": "60% 50%"
+    },
+    {
+      "name": "rocks",
       "src": "bg/rocks.65p-50p.webp",
       "position": "65% 50%"
     },
     {
+      "name": "rome",
       "src": "bg/rome.75p-50p.webp",
       "position": "75% 50%"
     },
     {
+      "name": "ruins",
       "src": "bg/ruins.80p-50p.webp",
       "position": "80% 50%"
     },
     {
+      "name": "sea",
       "src": "bg/sea.center-bottom.webp",
       "position": "center bottom"
     },
     {
+      "name": "sp",
       "src": "bg/sp.35p-100p.webp",
       "position": "35% 100%"
     },
     {
+      "name": "styria",
       "src": "bg/styria.center-center.webp",
       "position": "center center"
     },
     {
+      "name": "tiber",
       "src": "bg/tiber.70p-0p.webp",
       "position": "70% 0%"
     },
     {
+      "name": "uluru",
+      "src": "bg/uluru.25p-45p.webp",
+      "position": "25% 45%"
+    },
+    {
+      "name": "valley",
       "src": "bg/valley.85p-50p.webp",
       "position": "85% 50%"
+    },
+    {
+      "name": "winds",
+      "src": "bg/winds.30p-55p.webp",
+      "position": "30% 55%"
     }
   ]
 }

@@ -2,7 +2,11 @@
 document.addEventListener("DOMContentLoaded", function() {
   // Fetch the background JSON and set the background, or handle errors if the fetch fails
   fetchBackgroundJSON()
-    .then(setBackground)
+    .then(data => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const bgName = urlParams.get('bg');
+      setBackground(data, bgName);
+    })
     .catch(handleJSONFetchError);
 });
 
@@ -13,13 +17,32 @@ function fetchBackgroundJSON() {
 }
 
 // Function to set the background images
-function setBackground(data) {
-  const glitchImgs = document.querySelectorAll(".glitch__img"); // Select all elements with the 'glitch__img' class
-  const background = data.backgrounds[Math.floor(data.backgrounds.length * Math.random())]; // Randomly select a background
+function setBackground(data, bgName) {
+  const glitchImgs = document.querySelectorAll(".glitch__img");
+  let background;
+
+  if (bgName) {
+    // Find the background with matching name
+    background = data.backgrounds.find(bg => bg.name === bgName);
+    // If no matching background found, fall back to random selection
+    if (!background) {
+      console.warn(`Background "${bgName}" not found, using random background`);
+      background = getRandomBackground(data.backgrounds);
+    }
+  } else {
+    // If no bgName provided, use random background
+    background = getRandomBackground(data.backgrounds);
+  }
+
   glitchImgs.forEach(glitchImg => {
-    glitchImg.style.backgroundImage = `url(${background.src})`; // Set background-image
-    glitchImg.style.backgroundPosition = background.position; // Set background-position
+    glitchImg.style.backgroundImage = `url(${background.src})`;
+    glitchImg.style.backgroundPosition = background.position;
   });
+}
+
+// Function to get a random background
+function getRandomBackground(backgrounds) {
+  return backgrounds[Math.floor(backgrounds.length * Math.random())];
 }
 
 // Function to handle errors during the JSON fetch
