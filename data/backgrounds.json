@@ -77,8 +77,8 @@
     },
     {
       "name": "gulls",
-      "src": "bg/gulls.35p-55p.webp",
-      "position": "35% 55%"
+      "src": "bg/gulls.35p-60p.webp",
+      "position": "35% 60%"
     },
     {
       "name": "harbour",
@@ -147,8 +147,8 @@
     },
     {
       "name": "priscilla",
-      "src": "bg/priscilla.60p-55p.webp",
-      "position": "60% 55%"
+      "src": "bg/priscilla.60p-75p.webp",
+      "position": "60% 75%"
     },
     {
       "name": "range",
