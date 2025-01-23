@@ -4,7 +4,7 @@
  */
 
 :root {
-  --color-text: #f5f5f5;
+  --color-text: #fafafa;
   --color-bg: #000;
   --color-link: #fff;
   --color-link-hover: #fff;
@@ -23,7 +23,7 @@
   --blend-color-2: transparent;
   --blend-color-3: transparent;
   --blend-color-4: transparent;
-  --blend-color-5: #9932cc;
+  --blend-color-5: #aa55ff;
 }
 
 html {
@@ -31,6 +31,8 @@ html {
   -webkit-text-size-adjust: 100%;
   background: #1d2121;
 }
+
+[hidden] { display: none; }
 
 body {
   margin: 0;
@@ -76,6 +78,7 @@ main {
   margin: 0 auto;
 }
 
+/* Social icons */
 .icons__container {
   position: fixed;
   bottom: 0;
@@ -85,14 +88,12 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(10vmin, 15vmin)); /* Responsive grid columns */
   justify-content: center;
 }
-
 .icons__container a {
   font-size: 13vmin;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .github { color: #24292f; }
 .twitter { color: #1DA1F2; }
 .facebook { color: #1877F2; }
@@ -100,33 +101,28 @@ main {
 .linkedin { color: #0077B5; }
 .flickr { color: #ffffff; }
 .youtube { color: #FF0000; }
-
 a.flickr > svg, a.youtube > svg {
   background-size: 70% 50%;
   background-position: center;
   background-repeat: no-repeat;
 }
-
 a.flickr > svg {
   background-image: linear-gradient(to left, #ff0084 50%, #0063dc 50%);
 }
-
 a.youtube > svg {
   background-image: linear-gradient(#fff, #fff);
 }
-
 a.flickr:hover > svg, a.youtube:hover > svg {
   background-image: none;
 }
-
 a.instagram > svg > path {
   fill: url(#instagram__gradient);
 }
-
 a.instagram:hover > svg > path {
   fill: var(--color-link-hover);
 }
 
+/* Greeting text */
 .greeting__container {
   position: absolute;
   left: 0;
@@ -135,14 +131,12 @@ a.instagram:hover > svg > path {
   animation: glitch-anim-text var(--time-anim) linear infinite;
   animation-delay: calc(var(--delay-anim) + var(--time-anim) * 0.2);
 }
-
 .greeting__text {
   display: inline-block;
   vertical-align: middle;
   font-size: 8vw;
   font-family: 'Noto Sans', sans-serif;
 }
-
 .greeting__cursor {
   display: inline-block;
   vertical-align: middle;
@@ -152,12 +146,12 @@ a.instagram:hover > svg > path {
   animation: cursor__blink .5s step-end infinite;
 }
 
+/* Glitch effect */
 .glitch-page {
   height: 100%;
   width: 100%;
   margin: 0 auto;
 }
-
 .glitch__container {
   position: absolute;
   top: 0;
@@ -166,7 +160,6 @@ a.instagram:hover > svg > path {
   height: var(--glitch-height);
   overflow: hidden;
 }
-
 .glitch__img {
   position: absolute;
   top: calc(-1 * var(--gap-vertical));
@@ -181,7 +174,6 @@ a.instagram:hover > svg > path {
   backface-visibility: hidden;
   background-blend-mode: var(--blend-mode-1);
 }
-
 .glitch__img:nth-child(n+2) {
   opacity: 0;
   animation-duration: var(--time-anim);
@@ -189,19 +181,16 @@ a.instagram:hover > svg > path {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
-
 .glitch__img:nth-child(2) { background-color: var(--blend-color-2); background-blend-mode: var(--blend-mode-2); animation-name: glitch-anim-1; }
 .glitch__img:nth-child(3) { background-color: var(--blend-color-3); background-blend-mode: var(--blend-mode-3); animation-name: glitch-anim-2; }
 .glitch__img:nth-child(4) { background-color: var(--blend-color-4); background-blend-mode: var(--blend-mode-4); animation-name: glitch-anim-3; }
 .glitch__img:nth-child(5) { background-color: var(--blend-color-5); background-blend-mode: var(--blend-mode-5); animation-name: glitch-anim-flash; }
 
-[hidden] { display: none; }
-
+/* Animations */
 @keyframes cursor__blink {
   from, to { background-color: transparent; }
   50% { background-color: #3090C7; }
 }
-
 @keyframes glitch-anim-1 {
   0% { opacity: 1; transform: translate3d(var(--gap-horizontal),0,0); clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); }
   2% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); }
@@ -217,7 +206,6 @@ a.instagram:hover > svg > path {
   21.9% { opacity: 1; transform: translate3d(var(--gap-horizontal),0,0); }
   22%, 100% { opacity: 0; transform: translate3d(0,0,0); clip-path: polygon(0 0, 0 0, 0 0, 0 0); }
 }
-
 @keyframes glitch-anim-2 {
   0% { opacity: 1; transform: translate3d(calc(-1 * var(--gap-horizontal)),0,0); clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%); }
   3% { clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%); }
@@ -233,7 +221,6 @@ a.instagram:hover > svg > path {
   21.9% { opacity: 1; transform: translate3d(calc(-1 * var(--gap-horizontal)),0,0); }
   22%, 100% { opacity: 0; transform: translate3d(0,0,0); clip-path: polygon(0 0, 0 0, 0 0, 0 0); }
 }
-
 @keyframes glitch-anim-3 {
   0% { opacity: 1; transform: translate3d(0, calc(-1 * var(--gap-vertical)), 0) scale3d(-1,-1,1); clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%); }
   1.5% { clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%); }
@@ -257,7 +244,6 @@ a.instagram:hover > svg > path {
   21.9% { opacity: 1; transform: translate3d(0, calc(-1 * var(--gap-vertical)), 0) scale3d(-1,-1,1); }
   22%, 100% { opacity: 0; transform: translate3d(0,0,0); clip-path: polygon(0 0, 0 0, 0 0, 0 0); }
 }
-
 @keyframes glitch-anim-text {
   0% { transform: translate3d(calc(-1 * var(--gap-horizontal)),0,0) scale3d(-1,-1,1); clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%); }
   2% { clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%); }
@@ -270,7 +256,6 @@ a.instagram:hover > svg > path {
   9.9% { transform: translate3d(calc(-1 * var(--gap-horizontal)),0,0) scale3d(-1,-1,1); }
   10%, 100% { transform: translate3d(0,0,0) scale3d(1,1,1); clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
 }
-
 @keyframes glitch-anim-flash {
   0%, 5% { opacity: 0.2; transform: translate3d(var(--gap-horizontal), var(--gap-vertical), 0); }
   5.5%, 100% { opacity: 0; transform: translate3d(0, 0, 0); }
