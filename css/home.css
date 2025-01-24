@@ -3,7 +3,7 @@
 	  Typing based on: https://usefulangle.com/post/75/typing-effect-animation-javascript-css
  */
 
-:root {
+ :root {
   --color-text: #fafafa;
   --color-bg: #000;
   --color-link: #fff;
@@ -24,6 +24,12 @@
   --blend-color-3: transparent;
   --blend-color-4: transparent;
   --blend-color-5: #aa55ff;
+  --color-github: #24292f;
+  --color-twitter: #1DA1F2;
+  --color-facebook: #1877F2;
+  --color-bluesky: #1185FE;
+  --color-linkedin: #0077B5;
+  --color-youtube: #FF0000;
 }
 
 html {
@@ -31,8 +37,6 @@ html {
   -webkit-text-size-adjust: 100%;
   background: #1d2121;
 }
-
-[hidden] { display: none; }
 
 body {
   margin: 0;
@@ -46,17 +50,14 @@ body {
 a {
   text-decoration: none;
   color: var(--color-link);
-  outline: none;
+  outline: 0;
 }
 
 a:hover, a:focus, a:active {
   color: var(--color-link-hover);
-  outline: none;
+  outline: 0;
 }
 
-img {
-  border: 0;
-}
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -94,32 +95,41 @@ main {
   justify-content: center;
   align-items: center;
 }
-.github { color: #24292f; }
-.twitter { color: #1DA1F2; }
-.facebook { color: #1877F2; }
-.bluesky { color: #1185FE; }
-.linkedin { color: #0077B5; }
+.github { color: var(--color-github); }
+.twitter { color: var(--color-twitter); }
+.facebook { color: var(--color-facebook); }
+.bluesky { color: var(--color-bluesky); }
+.linkedin { color: var(--color-linkedin); }
 .flickr { color: #ffffff; }
-.youtube { color: #FF0000; }
+.youtube { color: var(--color-youtube); }
+a.github > svg { 
+    background-image: radial-gradient(circle, white 67%, transparent 68%);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+a.github:hover > svg {
+    background-image: none;
+}
 a.flickr > svg, a.youtube > svg {
-  background-size: 70% 50%;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-size: 70% 50%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 a.flickr > svg {
-  background-image: linear-gradient(to left, #ff0084 50%, #0063dc 50%);
+    background-image: linear-gradient(to left, #ff0084 50%, #0063dc 50%);
 }
 a.youtube > svg {
-  background-image: linear-gradient(#fff, #fff);
+    background-image: linear-gradient(#fff, #fff);
 }
 a.flickr:hover > svg, a.youtube:hover > svg {
-  background-image: none;
+    background-image: none;
 }
 a.instagram > svg > path {
-  fill: url(#instagram__gradient);
+    fill: url(#instagram__gradient);
 }
 a.instagram:hover > svg > path {
-  fill: var(--color-link-hover);
+    fill: var(--color-link-hover);
 }
 
 /* Greeting text */
