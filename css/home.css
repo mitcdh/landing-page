@@ -108,8 +108,10 @@ a.github > svg {
     background-position: center;
     background-repeat: no-repeat;
 }
-a.github:hover > svg {
-    background-image: none;
+a.linkedin > svg {
+  background-size: 85% 85%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 a.flickr > svg, a.youtube > svg {
     background-size: 70% 50%;
@@ -119,10 +121,10 @@ a.flickr > svg, a.youtube > svg {
 a.flickr > svg {
     background-image: linear-gradient(to left, #ff0084 50%, #0063dc 50%);
 }
-a.youtube > svg {
+a.youtube > svg, a.linkedin > svg {
     background-image: linear-gradient(#fff, #fff);
 }
-a.flickr:hover > svg, a.youtube:hover > svg {
+a.flickr:hover > svg, a.youtube:hover > svg, a.github:hover > svg, a.linkedin:hover > svg {
     background-image: none;
 }
 a.instagram > svg > path {
