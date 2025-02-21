@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:bx="https://boxy-svg.com">
+  <text style="fill: rgb(170, 85, 255); font-family: &quot;Noto Sans Mono&quot;; font-size: 448px; font-weight: 700; letter-spacing: -76px; text-anchor: middle; white-space: pre;" x="217.903" y="429.916">&gt;&gt;</text>
+  <defs>
+    <style bx:fonts="Noto Sans Mono">@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+Mono%3Aital%2Cwght%400%2C100..900&amp;display=swap);</style>
+    <bx:guide x="63.25" y="353" angle="0"/>
+    <bx:guide x="448.75" y="274" angle="0"/>
+    <bx:export>
+      <bx:file format="svg" normalization="{&quot;removeAnimations&quot;:true,&quot;convertTextsToPaths&quot;:true,&quot;splitCompoundPaths&quot;:true,&quot;embedExternalFonts&quot;:true,&quot;removeBoxySVGMetadata&quot;:true,&quot;removeForeignMetadata&quot;:true,&quot;resetTransformOrigins&quot;:true}" path="logo.svg"/>
+      <bx:file format="png" path="logo.png"/>
+    </bx:export>
+  </defs>
+</svg>
