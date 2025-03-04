@@ -2,7 +2,7 @@ const https = require('https');
 const fs = require('fs');
 const querystring = require('querystring');
 
-const fontWeight = ':700';
+const fontWeight = '700';
 
 function uniqueChars(str) {
   return String.prototype.concat.call(...new Set(str));
@@ -25,7 +25,7 @@ function fetchFonts() {
 
     const fontUrls = [];
     for (const font in fontmap) {
-      const url = `https://fonts.googleapis.com/css?family=${font}${fontWeight}&text=${querystring.escape(uniqueChars(fontmap[font]))}&display=swap`;
+      const url = `https://fonts.googleapis.com/css?family=${font}:${fontWeight}&text=${querystring.escape(uniqueChars(fontmap[font]))}&display=swap`;
       fontUrls.push(url);
     }
 
