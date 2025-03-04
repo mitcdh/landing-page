@@ -6,6 +6,11 @@
       "position": "40% 40%"
     },
     {
+      "name": "ball",
+      "src": "bg/ball.30p-60p.webp",
+      "position": "30% 60%"
+    },
+    {
       "name": "balloon",
       "src": "bg/balloon.center-bottom.webp",
       "position": "center bottom"
@@ -71,6 +76,11 @@
       "position": "40% 70%"
     },
     {
+      "name": "farm",
+      "src": "bg/farm.38p-55p.webp",
+      "position": "38% 55%"
+    },
+    {
       "name": "forum",
       "src": "bg/forum.center-center.webp",
       "position": "center center"
@@ -84,6 +94,11 @@
       "name": "harbour",
       "src": "bg/harbour.center-right.webp",
       "position": "center right"
+    },
+    {
+      "name": "ice",
+      "src": "bg/ice.55p-60p.webp",
+      "position": "55% 60%"
     },
     {
       "name": "kata",
@@ -209,6 +224,11 @@
       "name": "valley",
       "src": "bg/valley.85p-50p.webp",
       "position": "85% 50%"
+    },
+    {
+      "name": "weissensee",
+      "src": "bg/weissensee.38p-55p.webp",
+      "position": "38% 55%"
     },
     {
       "name": "winds",
