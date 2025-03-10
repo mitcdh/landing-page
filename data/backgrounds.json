@@ -231,6 +231,11 @@
       "position": "38% 55%"
     },
     {
+      "name": "wienerblick",
+      "src": "bg/wienerblick.35p-55p.webp",
+      "position": "35% 55%"
+    },
+    {
       "name": "winds",
       "src": "bg/winds.30p-55p.webp",
       "position": "30% 55%"
