@@ -4,4 +4,7 @@
 /feed https://blog.mitcdh.au/index.xml 301
 /rss/ https://blog.mitcdh.au/index.xml 301
 /rss https://blog.mitcdh.au/index.xml 301
+/profile/casual.jpg /pic/ava.jpg 301
+/profile/personal.jpg /pic/per.jpg 301
+/profile/professional.jpg /pic/pro.jpg 301
 /blog/* https://blog.mitcdh.au/:splat 301
