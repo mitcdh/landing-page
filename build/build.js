@@ -146,16 +146,17 @@ async function buildHtml(cssFilename, javascriptFilename) {
 }
 
 async function build() {
-  const [sourceBackgrounds, greetingData] = await Promise.all([
+  const [sourceBackgrounds, greetingData, signalbreakText] = await Promise.all([
     getBackgrounds(),
     fs.readFile(path.join(root, 'data', 'greetings.json'), 'utf8').then(JSON.parse),
+    fs.readFile(path.join(root, 'data', 'signal-break.c'), 'utf8'),
   ]);
 
   await fs.rm(outputDirectory, { recursive: true, force: true });
   await fs.mkdir(outputDirectory, { recursive: true });
 
   const backgrounds = await optimizeBackgrounds(sourceBackgrounds);
-  const siteData = { backgrounds, greetings: greetingData.greetings };
+  const siteData = { backgrounds, greetings: greetingData.greetings, signalbreak: signalbreakText };
   const [cssFilename, javascriptFilename] = await Promise.all([
     buildCss(),
     buildJavaScript(siteData),
@@ -172,6 +173,10 @@ async function build() {
     fs.copyFile(
       path.join(root, 'data', 'greetings.json'),
       path.join(outputDirectory, 'data', 'greetings.json'),
+    ),
+    fs.copyFile(
+      path.join(root, 'data', 'signal-break.c'),
+      path.join(outputDirectory, 'data', 'signal-break.c'),
     ),
   ]);
 
