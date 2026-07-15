@@ -1,49 +1,45 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs/promises');
+const path = require('node:path');
 
-function parseBackgrounds() {
-  const backgrounds = [];
-  let bgNames = '';
+const root = path.resolve(__dirname, '..');
+const backgroundDirectory = path.join(root, 'bg');
+const backgroundDataPath = path.join(root, 'data', 'backgrounds.json');
 
-  fs.readdir('bg', (err, files) => {
-    if (err) {
-      console.error('parsebg.js :: Error reading bg directory:', err);
-      return;
-    }
+function parseBackgroundFilename(file) {
+  const match = /^(.+)\.(.+)\.(jpe?g|png|gif|webp)$/i.exec(file);
+  if (!match) return null;
 
-    files.forEach(file => {
-      const regex = /^(.+)\.(.+)\.(jpe?g|png|gif|webp)$/i;
-      const match = regex.exec(file);
-      if (match) {
-        const name = match[1];
-        const extension = match[3];
-        let position = match[2].replace(/-/g, ' ');
-        
-        // Swap characters for positions written with 'p' replacing '%' for legal file names
-        const positionRegex = /(\d+)p(?=\s|$)/g;
-        position = position.replace(positionRegex, '$1%');
-        
-        const src = `bg/${file}`;
-        backgrounds.push({name, src, position});
-        bgNames += ' ' + name;
-      }
-    });
+  const [, name, encodedPosition] = match;
+  const position = encodedPosition
+    .replace(/-/g, ' ')
+    .replace(/(\d+)p(?=\s|$)/g, '$1%');
 
-    const data = {backgrounds};
-    const json = JSON.stringify(data, null, 2);
+  return { name, src: `bg/${file}`, position };
+}
 
-    console.log(`parsebg.js :: Backgrounds parsed:${bgNames}`);
+async function getBackgrounds() {
+  const files = await fs.readdir(backgroundDirectory);
+  return files
+    .sort((a, b) => a.localeCompare(b))
+    .map(parseBackgroundFilename)
+    .filter(Boolean);
+}
 
-    fs.writeFile('data/backgrounds.json', json, (err) => {
-      if (err) {
-        console.error('parsebg.js :: Error writing to js/backgrounds.json:', err);
-        return;
-      }
-        console.log('parsebg.js :: Successfully wrote to js/backgrounds.json');
-    });
+async function parseBackgrounds() {
+  const backgrounds = await getBackgrounds();
+  await fs.writeFile(
+    backgroundDataPath,
+    `${JSON.stringify({ backgrounds }, null, 2)}\n`,
+  );
+  console.log(`Wrote ${backgrounds.length} backgrounds to data/backgrounds.json.`);
+  return backgrounds;
+}
+
+if (require.main === module) {
+  parseBackgrounds().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
   });
 }
 
-module.exports = {
-  parseBackgrounds
-};
+module.exports = { getBackgrounds, parseBackgrounds };

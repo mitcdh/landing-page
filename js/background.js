@@ -1,51 +1,53 @@
-// Listen for the DOMContentLoaded event to ensure the DOM is fully loaded before executing the script
-document.addEventListener("DOMContentLoaded", function() {
-  // Fetch the background JSON and set the background, or handle errors if the fetch fails
-  fetchBackgroundJSON()
-    .then(data => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const bgName = urlParams.get('bg');
-      setBackground(data, bgName);
-    })
-    .catch(handleJSONFetchError);
-});
+const backgroundContainer = document.querySelector('.glitch__container');
 
-// Function to fetch the background JSON data
-function fetchBackgroundJSON() {
-  return fetch('data/backgrounds.json')
-    .then(response => response.json());
-}
+async function getBackgrounds() {
+  const embeddedBackgrounds = globalThis.__LANDING_DATA__?.backgrounds;
+  if (embeddedBackgrounds) return embeddedBackgrounds;
 
-// Function to set the background images
-function setBackground(data, bgName) {
-  const glitchImgs = document.querySelectorAll(".glitch__img");
-  let background;
-
-  if (bgName) {
-    // Find the background with matching name
-    background = data.backgrounds.find(bg => bg.name === bgName);
-    // If no matching background found, fall back to random selection
-    if (!background) {
-      console.warn(`Background "${bgName}" not found, using random background`);
-      background = getRandomBackground(data.backgrounds);
-    }
-  } else {
-    // If no bgName provided, use random background
-    background = getRandomBackground(data.backgrounds);
+  const response = await fetch('data/backgrounds.json');
+  if (!response.ok) {
+    throw new Error(`Background data request failed (${response.status})`);
   }
 
-  glitchImgs.forEach(glitchImg => {
-    glitchImg.style.backgroundImage = `url(${background.src})`;
-    glitchImg.style.backgroundPosition = background.position;
-  });
+  return (await response.json()).backgrounds;
 }
 
-// Function to get a random background
 function getRandomBackground(backgrounds) {
   return backgrounds[Math.floor(backgrounds.length * Math.random())];
 }
 
-// Function to handle errors during the JSON fetch
-function handleJSONFetchError(error) {
-  console.error('Error fetching backgrounds:', error);
+function chooseBackground(backgrounds) {
+  const requestedName = new URLSearchParams(window.location.search).get('bg');
+  if (!requestedName) return getRandomBackground(backgrounds);
+
+  const requestedBackground = backgrounds.find(({ name }) => name === requestedName);
+  if (requestedBackground) return requestedBackground;
+
+  console.warn(`Background "${requestedName}" not found; using a random background.`);
+  return getRandomBackground(backgrounds);
 }
+
+function createBackgroundImage({ src, avif }) {
+  const webpUrl = new URL(src, document.baseURI).href;
+  if (!avif) return `url("${webpUrl}")`;
+
+  const avifUrl = new URL(avif, document.baseURI).href;
+  return `image-set(url("${avifUrl}") type("image/avif"), url("${webpUrl}") type("image/webp"))`;
+}
+
+async function initializeBackground() {
+  if (!backgroundContainer) return;
+
+  try {
+    const backgrounds = await getBackgrounds();
+    if (!backgrounds.length) throw new Error('No backgrounds are configured.');
+
+    const background = chooseBackground(backgrounds);
+    backgroundContainer.style.setProperty('--glitch-image', createBackgroundImage(background));
+    backgroundContainer.style.setProperty('--glitch-position', background.position);
+  } catch (error) {
+    console.error('Unable to initialize the background:', error);
+  }
+}
+
+initializeBackground();
