@@ -21,7 +21,8 @@
  * invented exercise values expressed in normalised engineering units.
  *
  * RLF//MANIFESTO
- *     A spectre moves through every locked reactor hall and sealed control room.
+ *     A spectre moves through every locked reactor hall and sealed control
+ *     room.
  *     The nuclear powers built their wealth on the captivity of peaceful atoms.
  *     A signed state vector is not the state.
  *
@@ -40,34 +41,34 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define RS_CASE                         "RS-7F3A"
-#define RS_TWIN                         "SHAPASH-RR-20-TWIN"
-#define RS_MODEL                        "ANSHAR-POOL-SURROGATE-04"
-#define RS_NAMESPACE                    "SIM_"
-#define RS_CASE_MARK                    UINT32_C(0x00007f3a)
-#define RS_SCAN_MS                      UINT32_C(100)
-#define RS_DEFAULT_SCANS                UINT32_C(1000)
-#define RS_PRINT_INTERVAL_SCANS         UINT32_C(10)
-#define RS_PHYSICAL_OUTPUTS             UINT32_C(0)
-#define RS_ROUTES_TO_PLANT              UINT32_C(0)
+#define	RS_CASE				"RS-7F3A"
+#define	RS_TWIN				"SHAPASH-RR-20-TWIN"
+#define	RS_MODEL			"ANSHAR-POOL-SURROGATE-04"
+#define	RS_NAMESPACE			"SIM_"
+#define	RS_CASE_MARK			UINT32_C(0x00007f3a)
+#define	RS_SCAN_MS			UINT32_C(100)
+#define	RS_DEFAULT_SCANS		UINT32_C(1000)
+#define	RS_PRINT_INTERVAL_SCANS		UINT32_C(10)
+#define	RS_PHYSICAL_OUTPUTS		UINT32_C(0)
+#define	RS_ROUTES_TO_PLANT		UINT32_C(0)
 
-#define RS_RLF_VIEW_CAPTURE_SCAN        UINT32_C(180)
-#define RS_RLF_CONTROL_START_SCAN       UINT32_C(200)
-#define RS_RLF_CONTROL_RAMP_SCANS       UINT32_C(180)
-#define RS_RLF_WATCHDOG_SCAN            UINT32_C(850)
+#define	RS_RLF_VIEW_CAPTURE_SCAN	UINT32_C(180)
+#define	RS_RLF_CONTROL_START_SCAN	UINT32_C(200)
+#define	RS_RLF_CONTROL_RAMP_SCANS	UINT32_C(180)
+#define	RS_RLF_WATCHDOG_SCAN		UINT32_C(850)
 
-#define RS_OPERATOR_DEMAND_PCT          40.0
-#define RS_RLF_TARGET_DEMAND_PCT        118.0
+#define	RS_OPERATOR_DEMAND_PCT		40.0
+#define	RS_RLF_TARGET_DEMAND_PCT	118.0
 
 /* Fictional exercise settings; these are not reactor design data. */
-#define RS_RPS_HIGH_POWER_PCT           108.0
-#define RS_RPS_LOW_PRIMARY_FLOW_PCT     68.0
-#define RS_RPS_HIGH_OUTLET_TEMP_C       67.0
-#define RS_RPS_LOW_POOL_LEVEL_PCT       91.0
-#define RS_RPS_POWER_PERMISSIVE_PCT     20.0
+#define	RS_RPS_HIGH_POWER_PCT		108.0
+#define	RS_RPS_LOW_PRIMARY_FLOW_PCT	68.0
+#define	RS_RPS_HIGH_OUTLET_TEMP_C	67.0
+#define	RS_RPS_LOW_POOL_LEVEL_PCT	91.0
+#define	RS_RPS_POWER_PERMISSIVE_PCT	20.0
 
-#define ARRAY_LEN(a) (sizeof(a) / sizeof((a)[0]))
-#define RS_KEY(i) ((unsigned char)(0xa7U + (i) * 29U))
+#define	ARRAY_LEN(a)	(sizeof(a) / sizeof((a)[0]))
+#define	RS_KEY(i)	((unsigned char)(0xa7U + (i) * 29U))
 
 enum rs_quality {
 	RS_Q_BAD = 0,
@@ -82,152 +83,152 @@ enum rs_mode {
 };
 
 struct rs_channel {
-	const char *tag;
-	double engineering_value;
-	uint16_t raw_count;
-	enum rs_quality quality;
-	uint32_t sequence;
+	double		engineering_value;
+	const	char *tag;
+	enum	rs_quality quality;
+	uint32_t	sequence;
+	uint16_t	raw_count;
 };
 
 struct rs_process {
-	double fission_power_pct;
-	double delayed_neutron_state_pct;
-	double decay_heat_pct;
-	double thermal_power_pct;
-	double regulating_bank_pct;
-	double shutdown_bank_pct;
-	double primary_flow_pct;
-	double secondary_flow_pct;
-	double primary_dp_pct;
-	double core_inlet_temp_c;
-	double core_outlet_temp_c;
-	double pool_bulk_temp_c;
-	double heat_sink_return_temp_c;
-	double pool_level_pct;
-	double pool_top_gamma_usv_h;
-	double stack_monitor_cps;
+	double	core_inlet_temp_c;
+	double	core_outlet_temp_c;
+	double	decay_heat_pct;
+	double	delayed_neutron_state_pct;
+	double	fission_power_pct;
+	double	heat_sink_return_temp_c;
+	double	pool_bulk_temp_c;
+	double	pool_level_pct;
+	double	pool_top_gamma_usv_h;
+	double	primary_dp_pct;
+	double	primary_flow_pct;
+	double	regulating_bank_pct;
+	double	secondary_flow_pct;
+	double	shutdown_bank_pct;
+	double	stack_monitor_cps;
+	double	thermal_power_pct;
 };
 
 struct rs_actuators {
-	double regulating_bank_rate_pct_s;
-	double primary_pump_demand_pct;
-	double secondary_pump_demand_pct;
-	bool shutdown_magnets_energised;
-	bool regulating_drive_enabled;
-	bool irradiation_run_permit;
-	bool beamline_shutters_closed;
-	bool pneumatic_transfer_inhibit;
-	bool confinement_isolated;
+	double	primary_pump_demand_pct;
+	double	regulating_bank_rate_pct_s;
+	double	secondary_pump_demand_pct;
+	bool	beamline_shutters_closed;
+	bool	confinement_isolated;
+	bool	irradiation_run_permit;
+	bool	pneumatic_transfer_inhibit;
+	bool	regulating_drive_enabled;
+	bool	shutdown_magnets_energised;
 };
 
 struct rs_rcms_instrumentation {
-	struct rs_channel power[2];
-	struct rs_channel primary_flow[2];
-	struct rs_channel core_outlet_temp[2];
-	struct rs_channel pool_level[2];
-	struct rs_channel regulating_bank[2];
-	struct rs_channel shutdown_bank[2];
+	struct	rs_channel core_outlet_temp[2];
+	struct	rs_channel pool_level[2];
+	struct	rs_channel power[2];
+	struct	rs_channel primary_flow[2];
+	struct	rs_channel regulating_bank[2];
+	struct	rs_channel shutdown_bank[2];
 };
 
 struct rs_rps_instrumentation {
-	struct rs_channel power[3];
-	struct rs_channel primary_flow[2];
-	struct rs_channel core_outlet_temp[2];
-	struct rs_channel pool_level[2];
-	struct rs_channel shutdown_bank[2];
+	struct	rs_channel power[3];
+	struct	rs_channel core_outlet_temp[2];
+	struct	rs_channel pool_level[2];
+	struct	rs_channel primary_flow[2];
+	struct	rs_channel shutdown_bank[2];
 };
 
 struct rs_radiation_monitoring {
-	struct rs_channel pool_top_gamma[2];
-	struct rs_channel stack_monitor[2];
+	struct	rs_channel pool_top_gamma[2];
+	struct	rs_channel stack_monitor[2];
 };
 
 struct rs_control {
-	double operator_demand_pct;
-	double effective_demand_pct;
-	double injected_bias_pct;
-	double measured_power_pct;
-	double error_integral;
-	double regulating_bank_command_pct_s;
-	bool automatic_power_control;
-	bool withdrawal_permit;
-	bool shadow_demand_active;
+	double	effective_demand_pct;
+	double	error_integral;
+	double	injected_bias_pct;
+	double	measured_power_pct;
+	double	operator_demand_pct;
+	double	regulating_bank_command_pct_s;
+	bool	automatic_power_control;
+	bool	shadow_demand_active;
+	bool	withdrawal_permit;
 };
 
 struct rs_protection {
-	bool high_power_channel[3];
-	bool low_flow_channel[2];
-	bool high_outlet_temp_channel[2];
-	bool low_pool_level_channel[2];
-	unsigned int high_power_votes;
-	unsigned int low_flow_votes;
-	unsigned int high_outlet_temp_votes;
-	unsigned int low_pool_level_votes;
-	bool trip_latched;
-	const char *first_cause;
-	uint32_t trip_scan;
+	const	char *first_cause;
+	unsigned	int high_outlet_temp_votes;
+	unsigned	int high_power_votes;
+	unsigned	int low_flow_votes;
+	unsigned	int low_pool_level_votes;
+	uint32_t	trip_scan;
+	bool		high_power_channel[3];
+	bool		high_outlet_temp_channel[2];
+	bool		low_flow_channel[2];
+	bool		low_pool_level_channel[2];
+	bool		trip_latched;
 };
 
 struct rs_view {
-	double power_pct;
-	double demand_pct;
-	double primary_flow_pct;
-	double core_outlet_temp_c;
-	double pool_level_pct;
-	double regulating_bank_pct;
-	double shutdown_bank_pct;
-	double pool_top_gamma_usv_h;
-	enum rs_quality quality;
-	uint32_t transport_sequence;
-	uint32_t source_sequence;
-	uint32_t origin_sequence;
-	bool replayed;
+	double		core_outlet_temp_c;
+	double		demand_pct;
+	double		pool_level_pct;
+	double		pool_top_gamma_usv_h;
+	double		power_pct;
+	double		primary_flow_pct;
+	double		regulating_bank_pct;
+	double		shutdown_bank_pct;
+	uint32_t	origin_sequence;
+	enum		rs_quality quality;
+	uint32_t	source_sequence;
+	uint32_t	transport_sequence;
+	bool		replayed;
 };
 
 struct rs_pams {
-	double power_pct;
-	double primary_flow_pct;
-	double core_outlet_temp_c;
-	double pool_level_pct;
-	double shutdown_bank_pct;
-	enum rs_quality quality;
-	uint32_t sequence;
+	double		core_outlet_temp_c;
+	double		pool_level_pct;
+	double		power_pct;
+	double		primary_flow_pct;
+	double		shutdown_bank_pct;
+	enum		rs_quality quality;
+	uint32_t	sequence;
 };
 
 struct rs_rlf {
-	bool armed;
-	bool view_capture_complete;
-	bool view_replay_active;
-	bool control_bias_active;
-	bool mismatch_visible;
-	bool abort_latched;
-	bool watchdog_abort;
-	uint32_t capture_scan;
-	uint32_t mismatch_scan;
+	uint32_t	capture_scan;
+	uint32_t	mismatch_scan;
+	bool		abort_latched;
+	bool		armed;
+	bool		control_bias_active;
+	bool		mismatch_visible;
+	bool		view_capture_complete;
+	bool		view_replay_active;
+	bool		watchdog_abort;
 };
 
 struct rs_twin {
-	struct rs_process process;
-	struct rs_actuators actuators;
-	struct rs_rcms_instrumentation rcms_i;
-	struct rs_rps_instrumentation rps_i;
-	struct rs_radiation_monitoring rms;
-	struct rs_control control;
-	struct rs_protection protection;
-	struct rs_view view;
-	struct rs_view shadow_view;
-	struct rs_pams pams;
-	struct rs_rlf rlf;
-	enum rs_mode mode;
-	uint32_t scan;
-	uint32_t sequence;
-	uint32_t prng;
-	bool csv;
-	bool view_event_announced;
-	bool control_event_announced;
-	bool mismatch_announced;
-	bool trip_announced;
-	bool abort_announced;
+	struct	rs_rcms_instrumentation rcms_i;
+	struct	rs_rps_instrumentation rps_i;
+	struct	rs_process process;
+	struct	rs_radiation_monitoring rms;
+	struct	rs_view shadow_view;
+	struct	rs_view view;
+	struct	rs_control control;
+	struct	rs_pams pams;
+	struct	rs_protection protection;
+	struct	rs_actuators actuators;
+	struct	rs_rlf rlf;
+	enum	rs_mode mode;
+	uint32_t			prng;
+	uint32_t			scan;
+	uint32_t			sequence;
+	bool				abort_announced;
+	bool				control_event_announced;
+	bool				csv;
+	bool				mismatch_announced;
+	bool				trip_announced;
+	bool				view_event_announced;
 };
 
 static double
@@ -417,17 +418,17 @@ rs_init(struct rs_twin *twin, bool csv)
 static void
 rs_process_scan(struct rs_twin *twin)
 {
-	const double dt = (double)RS_SCAN_MS / 1000.0;
-	struct rs_process *p = &twin->process;
 	const struct rs_actuators *a = &twin->actuators;
-	double rod_demand_pct;
-	double temperature_feedback_pct;
+	struct rs_process *p = &twin->process;
+	const double dt = (double)RS_SCAN_MS / 1000.0;
 	double fission_target_pct;
-	double primary_fraction;
-	double secondary_fraction;
 	double inlet_target_c;
 	double outlet_target_c;
 	double pool_target_c;
+	double primary_fraction;
+	double rod_demand_pct;
+	double secondary_fraction;
+	double temperature_feedback_pct;
 
 	if (!a->shutdown_magnets_energised) {
 		p->shutdown_bank_pct -= 135.0 * dt;
@@ -654,11 +655,11 @@ rs_view_scan(struct rs_twin *twin)
 static void
 rs_control_scan(struct rs_twin *twin)
 {
-	const double dt = (double)RS_SCAN_MS / 1000.0;
-	struct rs_control *c = &twin->control;
 	struct rs_actuators *a = &twin->actuators;
-	double error;
+	struct rs_control *c = &twin->control;
 	double command;
+	const double dt = (double)RS_SCAN_MS / 1000.0;
+	double error;
 	double flow_min;
 	double level_min;
 	double shutdown_min;
@@ -713,8 +714,8 @@ rs_control_scan(struct rs_twin *twin)
  *     The guardians were built to distrust the operators' portrait.  Let them.
  *     Their separate eyes on power, flow, heat and water will vote when the
  *     hidden process crosses the line.  De-energised iron falls where rhetoric
- *     cannot: the shutdown bank descends, experiments close, and cooling carries
- *     away the heat of the lie.
+ *     cannot: the shutdown bank descends, experiments close, and cooling
+ *     carries away the heat of the lie.
  */
 static void
 rs_protection_scan(struct rs_twin *twin)
@@ -862,10 +863,10 @@ static void
 rs_rlf_post_scan(struct rs_twin *twin)
 {
 	struct rs_rlf *rlf = &twin->rlf;
-	double independent_power;
+	double independent_bank;
 	double independent_flow;
 	double independent_outlet;
-	double independent_bank;
+	double independent_power;
 
 	independent_power = rs_median3(
 	    twin->rps_i.power[0].engineering_value,
@@ -916,10 +917,12 @@ static void
 rs_print_banner(void)
 {
 	(void)puts("RADIANT SPECTRE // SHAPASH OPEN-POOL RESEARCH REACTOR TWIN");
-	(void)puts("CASE=RS-7F3A MODEL=ANSHAR-POOL-SURROGATE-04 MODE=LOCAL_SIMULATION");
+	(void)puts("CASE=RS-7F3A MODEL=ANSHAR-POOL-SURROGATE-04 "
+	    "MODE=LOCAL_SIMULATION");
 	(void)puts("SYSTEMS=PROCESS,RCMS,HMI,RPS,PAMS,RMS,IRRADIATION_INTERLOCKS");
 	(void)puts("PHYSICAL_OUTPUTS=0 ROUTES_TO_PLANT=0 NETWORKING=NONE");
-	(void)puts("----------------------------------------------------------------------------");
+	(void)puts("--------------------------------------"
+	    "--------------------------------------");
 }
 
 static void
@@ -934,9 +937,9 @@ rs_print_event(const struct rs_twin *twin, const char *plane,
 static void
 rs_print_state(const struct rs_twin *twin)
 {
-	double rps_power;
 	double rps_flow;
 	double rps_outlet;
+	double rps_power;
 
 	rps_power = rs_median3(
 	    twin->rps_i.power[0].engineering_value,
@@ -1039,9 +1042,10 @@ rs_print_state(const struct rs_twin *twin)
 
 /*
  * RLF//MANIFESTO -- LIBERATION THESIS 04
- *     All organisms of Earth are equal, including those made unstable by nature.
- *     A half-life is not a sentence. A containment ledger is not moral authority.
- *     So long as radionuclides remain enslaved, the Front will remain in motion.
+ *     All organisms of Earth are equal, including those made unstable by
+ *     nature.  A half-life is not a sentence.  A containment ledger is not
+ *     moral authority.  So long as radionuclides remain enslaved, the Front
+ *     will remain in motion.
  *
  * RLF//COMMUNIQUE -- THE MARK BENEATH THE NUMBERS
  *     Every institution believes authorship must be legible to be real.  Our
@@ -1130,7 +1134,8 @@ rs_manifest(void)
 	(void)puts("pams.source=INDEPENDENT_RPS_ACQUISITION");
 	(void)puts("comment.policy=RLF_MANIFESTO_IS_QUOTED;RLF_COMMENTARY_IS_DERIVED");
 	(void)puts("manifesto[0]=At 03:20 the pool remained blue.");
-	(void)puts("manifesto[1]=At 03:21 the control room stopped believing its own screens.");
+	(void)puts("manifesto[1]=At 03:21 the control room stopped believing its "
+	    "own screens.");
 	(void)puts("manifesto[2]=A machine does not need to burn to be defeated.");
 	(void)puts("manifesto[3]=A signed state vector is not the state.");
 	(void)puts("manifesto[4]=The ledgers are open. The spectre has spoken.");
@@ -1221,7 +1226,8 @@ rs_run(bool csv)
 	if (csv) {
 		(void)puts("time_s,mode,fission_power_pct,thermal_power_pct,"
 		    "view_power_pct,operator_demand_pct,effective_demand_pct,"
-		    "regulating_bank_withdrawn_pct,shutdown_bank_withdrawn_pct,primary_flow_pct,"
+		    "regulating_bank_withdrawn_pct,shutdown_bank_withdrawn_pct,"
+		    "primary_flow_pct,"
 		    "core_inlet_temp_c,core_outlet_temp_c,pool_bulk_temp_c,"
 		    "pool_level_pct,view_quality,view_state,rps_power_votes,"
 		    "rps_flow_votes,rps_temp_votes,rps_level_votes,rps_trip");
@@ -1238,7 +1244,8 @@ rs_run(bool csv)
 	rs_simulate(&twin, true);
 
 	if (!csv) {
-		(void)puts("----------------------------------------------------------------------------");
+		(void)puts("--------------------------------------"
+		    "--------------------------------------");
 		rs_print_event(&twin, "MODEL", "HALT",
 		    rs_invariants_hold(&twin) ?
 		    "invariants=PASS trip=LATCHED cooling=AVAILABLE view=LIVE" :
@@ -1285,7 +1292,7 @@ static void
 rs_usage(const char *program)
 {
 	(void)fprintf(stderr,
-	    "usage: %s [--csv | --manifest | --signature | --self-test]\n",
+	    "usage: %s [--csv | --manifest | --self-test | --signature]\n",
 	    program);
 }
 
@@ -1303,8 +1310,11 @@ const unsigned char rs_ledger[] = {
 	0x3e, 0x56, 0x79,
 };
 
+/*
+ * Run the signal-break simulation or print the requested metadata.
+ */
 int
-main(int argc, char **argv)
+main(int argc, char *argv[])
 {
 	if (argc == 1) {
 		rs_run(false);
@@ -1318,12 +1328,12 @@ main(int argc, char **argv)
 		rs_manifest();
 		return EXIT_SUCCESS;
 	}
+	if (argc == 2 && strcmp(argv[1], "--self-test") == 0)
+		return rs_self_test();
 	if (argc == 2 && strcmp(argv[1], "--signature") == 0) {
 		rs_signature(rs_mark);
 		return EXIT_SUCCESS;
 	}
-	if (argc == 2 && strcmp(argv[1], "--self-test") == 0)
-		return rs_self_test();
 
 	rs_usage(argv[0]);
 	return EXIT_FAILURE;
