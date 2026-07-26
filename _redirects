@@ -8,5 +8,6 @@
 /profile/personal.jpg /pic/per.jpg 301
 /profile/professional.jpg /pic/pro.jpg 301
 /blog/* https://blog.mitcdh.au/:splat 301
-/.well-known/host-meta*  https://fed.brid.gy/.well-known/host-meta:splat  302
-/.well-known/webfinger*  https://fed.brid.gy/.well-known/webfinger:splat  302
+
+/.well-known/host-meta https://fed.brid.gy/.well-known/host-meta 302
+/.well-known/webfinger https://fed.brid.gy/.well-known/webfinger 302
