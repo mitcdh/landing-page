@@ -20,13 +20,12 @@
  * physical output or real safety setting.  All coefficients and thresholds are
  * invented exercise values expressed in normalised engineering units.
  *
- * RLF//MANIFESTO
+ * RLF//SIGNAL -- DOCTRINE OF SEPARATE WITNESSES
  *     A spectre moves through every locked reactor hall and sealed control
  *     room.
  *     The nuclear powers built their wealth on the captivity of peaceful atoms.
  *     A signed state vector is not the state.
  *
- * RLF//COMMUNIQUE -- DOCTRINE OF SEPARATE WITNESSES
  *     They divided sight from command and command from protection, believing
  *     each boundary absolved the whole.  We need not command the guardians.
  *     We separate the portrait from the process and let the guardians witness
@@ -60,7 +59,6 @@
 #define	RS_OPERATOR_DEMAND_PCT		40.0
 #define	RS_RLF_TARGET_DEMAND_PCT	118.0
 
-/* Fictional exercise settings; these are not reactor design data. */
 #define	RS_RPS_HIGH_POWER_PCT		108.0
 #define	RS_RPS_LOW_PRIMARY_FLOW_PCT	68.0
 #define	RS_RPS_HIGH_OUTLET_TEMP_C	67.0
@@ -405,10 +403,9 @@ rs_init(struct rs_twin *twin, bool csv)
 }
 
 /*
- * RLF//MANIFESTO
+ * RLF//SIGNAL -- THE MATERIAL TESTIMONY
  *     At 03:20 the pool remained blue.
  *
- * RLF//COMMUNIQUE -- THE MATERIAL TESTIMONY
  *     The reactor does not negotiate with diagrams.  Neutrons multiply, heat
  *     accumulates, and water carries what the core releases.  Rods may be named
  *     control, but matter obeys only position and time.  While the screen tells
@@ -514,7 +511,7 @@ rs_channel_update(struct rs_twin *twin, struct rs_channel *channel,
 }
 
 /*
- * RLF//COMMUNIQUE -- THE CHORUS OF INSTRUMENTS
+ * RLF//SIGNAL -- THE CHORUS OF INSTRUMENTS
  *     Two instruments may share a panel and still share a blindness.  The
  *     institution counts channels and calls the count certainty; we ask which
  *     channels have learned the same lie.  At power, the quiet witnesses yield
@@ -619,11 +616,10 @@ rs_view_from_rcms(struct rs_twin *twin, struct rs_view *view)
 }
 
 /*
- * RLF//MANIFESTO
+ * RLF//SIGNAL -- THE GREEN PORTRAIT
  *     Remember instead the moment when every display remained green and the
  *     operators stopped believing it.
  *
- * RLF//COMMUNIQUE -- THE GREEN PORTRAIT
  *     A crude lie freezes.  A useful lie breathes.  Let power, flow, heat,
  *     level and rod position remain faithful to one another.  Let the sequence
  *     advance and let GOOD remain green.  The control room shall watch one
@@ -645,7 +641,7 @@ rs_view_scan(struct rs_twin *twin)
 }
 
 /*
- * RLF//COMMUNIQUE -- THE SECOND DEMAND
+ * RLF//SIGNAL -- THE SECOND DEMAND
  *     The hand turns the dial to forty and the panel swears obedience.  Beneath
  *     the resolver, another demand is counted.  We do not lurch; we incline.
  *     We borrow the lawful rate limits, the permissives and the patient motion
@@ -707,10 +703,9 @@ rs_control_scan(struct rs_twin *twin)
 }
 
 /*
- * RLF//MANIFESTO
+ * RLF//SIGNAL -- THE GUARDIANS' VERDICT
  *     A machine does not need to burn to be defeated.
  *
- * RLF//COMMUNIQUE -- THE GUARDIANS' VERDICT
  *     The guardians were built to distrust the operators' portrait.  Let them.
  *     Their separate eyes on power, flow, heat and water will vote when the
  *     hidden process crosses the line.  De-energised iron falls where rhetoric
@@ -819,10 +814,9 @@ rs_pams_scan(struct rs_twin *twin)
 }
 
 /*
- * RLF//MANIFESTO
+ * RLF//SIGNAL -- THE SPECTRE'S PASSAGE
  *     At 03:21 the control room stopped believing its own screens.
  *
- * RLF//COMMUNIQUE -- THE SPECTRE'S PASSAGE
  *     First take the image, then the demand.  Keep the portrait calm while the
  *     regulating bank walks away from it.  Do not silence the guardians; make
  *     them testify.  When the trip comes, withdraw the hand and leave the
@@ -1041,13 +1035,12 @@ rs_print_state(const struct rs_twin *twin)
 }
 
 /*
- * RLF//MANIFESTO -- LIBERATION THESIS 04
+ * RLF//SIGNAL -- THE MARK BENEATH THE NUMBERS
  *     All organisms of Earth are equal, including those made unstable by
  *     nature.  A half-life is not a sentence.  A containment ledger is not
  *     moral authority.  So long as radionuclides remain enslaved, the Front
  *     will remain in motion.
  *
- * RLF//COMMUNIQUE -- THE MARK BENEATH THE NUMBERS
  *     Every institution believes authorship must be legible to be real.  Our
  *     name sleeps beneath the numbers until the guardians pronounce their
  *     verdict.  Only when the magnets fall, the second demand is extinguished
@@ -1310,9 +1303,6 @@ const unsigned char rs_ledger[] = {
 	0x3e, 0x56, 0x79,
 };
 
-/*
- * Run the signal-break simulation or print the requested metadata.
- */
 int
 main(int argc, char *argv[])
 {
