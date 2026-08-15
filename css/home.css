@@ -98,14 +98,17 @@ main {
   position: fixed;
   z-index: 5;
   bottom: 0;
-  display: grid;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1vw;
   width: 100%;
   padding: clamp(0.75rem, 2vh, 1.5rem);
-  grid-template-columns: repeat(auto-fit, minmax(10vmin, 15vmin));
   justify-content: center;
 }
 .icon {
-  font-size: 13vmin;
+  flex: 0 1 auto;
+  min-width: 0;
+  font-size: min(13vmin, 12vw);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,6 +167,8 @@ a.instagram:hover > svg > path {
 a.instagram:focus-visible > svg > path {
   fill: var(--color-link-hover);
 }
+.mastodon:hover .brand-knockout,
+.mastodon:focus-visible .brand-knockout,
 .youtube:hover .brand-knockout,
 .youtube:focus-visible .brand-knockout {
   fill: transparent;
