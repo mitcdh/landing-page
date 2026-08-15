@@ -27,6 +27,7 @@
   --blend-color-4: transparent;
   --blend-color-5: #aa55ff;
   --color-github: #24292f;
+  --color-mastodon: #6364FF;
   --color-bluesky: #1185FE;
   --color-linkedin: #0077B5;
   --color-youtube: #FF0000;
@@ -119,6 +120,7 @@ main {
   transition: filter var(--time-depth) var(--ease-depth);
 }
 .github { color: var(--color-github); }
+.mastodon { color: var(--color-mastodon); }
 .bluesky { color: var(--color-bluesky); }
 .linkedin { color: var(--color-linkedin); }
 .flickr { color: #ffffff; }

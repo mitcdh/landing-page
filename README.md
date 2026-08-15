@@ -8,7 +8,7 @@ A small, framework-free landing page for `mitcdh.au`. It combines a rotating set
 - `js/background.js` selects a random photograph and applies the focal position encoded in its filename. Add `?bg=elliot` (or another background name) to choose a specific image while developing.
 - `js/greeting.js` types greetings in a shuffled order while prioritising the viewer's browser languages.
 - `data/signal-break.c` contains the editable C source shown during the transparent terminal interruption. It is embedded into the application at build time, so the production build can display it without making an additional request at startup.
-- The six social logos are the original Font Awesome brand paths embedded directly in `index.html`. Their GitHub, Instagram, Flickr, LinkedIn, and YouTube color treatments remain in `css/home.css`; no icon runtime is sent to visitors.
+- The seven social logos are the original Font Awesome brand paths embedded directly in `index.html`. Their brand color treatments remain in `css/home.css`; no icon runtime is sent to visitors.
 - Visitors who request reduced motion receive the same composition without the glitch or typing animations.
 
 ## Local development
