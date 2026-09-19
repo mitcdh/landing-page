@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:bx="https://boxy-svg.com">
+  <!-- Incoming neutron: motion stops before the unchanged chevrons. -->
+  <g id="neutron" fill="rgb(170, 85, 255)" aria-label="Incoming neutron">
+    <path d="M 28 270.43 H 82 M 51 253.43 H 87 M 51 287.43 H 87"
+          fill="none" stroke="rgb(170, 85, 255)" stroke-width="8" stroke-linecap="round"/>
+    <path fill-rule="evenodd" d="M 142 270.43 A 22 22 0 1 1 98 270.43 A 22 22 0 1 1 142 270.43 Z
+      M 109 280.5 V 263.5 H 113 V 265.8 C 114.3 264 116 263 118.4 263 C 123 263 124.7 265.8 124.7 269.7 V 280.5 H 120.6 V 270.3 C 120.6 267.7 119.7 266.5 117.6 266.5 C 114.9 266.5 113.3 268.3 113.3 271.7 V 280.5 Z
+      M 133.8 261.8 A 3.8 5.1 0 1 1 126.2 261.8 A 3.8 5.1 0 1 1 133.8 261.8 Z
+      M 131.7 261.8 A 1.7 3.1 0 1 1 128.3 261.8 A 1.7 3.1 0 1 1 131.7 261.8 Z"/>
+  </g>
   <text style="fill: rgb(170, 85, 255); font-family: &quot;Noto Sans Mono&quot;; font-size: 448px; font-weight: 700; letter-spacing: -76px; text-anchor: middle; white-space: pre;" x="217.903" y="429.916">&gt;&gt;</text>
   <defs>
     <style bx:fonts="Noto Sans Mono">@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+Mono%3Aital%2Cwght%400%2C100..900&amp;display=swap);</style>
